@@ -1,0 +1,101 @@
+.content {
+  margin-top: 0;
+}
+// Crazy formatting. No real effect
+.inner {
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+  width: 80%;
+}
+// Post Title/test
+.post-header {
+  position: relative;
+  display: table;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5% 0;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  background: #9c494d no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+.blog-intro {
+  margin: 0;
+  font: 1.5em 'Novecento Wide';
+}
+.post-title {
+  margin: 2% 0 3%;
+  font: 4.5em 'Calendas Plus';
+}
+.post-meta {
+  letter-spacing: 0.1em;
+  font: 1.3em 'PT Sans', 'Droid Sans';
+  font-style: italic;
+}
+.instruction {
+  margin-top: 4%;
+}
+
+.post-content img {
+  width: 100%;
+}
+.post-footer {
+  border-left: 15px solid #2c2c2c;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 3%;
+  width: auto;
+  background: none;
+}
+.author {
+  h4 {
+    margin-bottom: 1%;
+    font: 800 1.5em 'Novecento Wide';
+  }
+  p {
+    margin: 0;
+    font: 1em 'PT Sans', 'Droid Sans';
+  }
+}
+.share {
+  position: relative;
+  bottom: 0;
+  h4 {
+    margin: 5% 0 0;
+    font: 1em 'Montserrat';
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .blog-intro {
+    font-size: 0.8em;
+  }
+  .post-title {
+    font-size: 2em;
+    margin: 10% 0;
+  }
+  .post-meta {
+    font-size: 0.7em;
+  }
+  .author h4 {
+    margin-bottom: 5%;
+  }
+  .post-footer {
+    text-align: center;
+  }
+  .share {
+    h4 {
+      margin-bottom: 2%;
+    }
+    .icon-twitter, .icon-facebook, .icon-google-plus {
+      font-size: 1.5em;
+    }
+  }
+}

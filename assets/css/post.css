@@ -1,0 +1,129 @@
+/* line 1, ../sass/post.scss */
+.content {
+  margin-top: 0;
+}
+
+/* line 5, ../sass/post.scss */
+.inner {
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+  width: 80%;
+}
+
+/* line 12, ../sass/post.scss */
+.post-header {
+  position: relative;
+  display: table;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5% 0;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  background: #9c494d no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+/* line 27, ../sass/post.scss */
+.blog-intro {
+  margin: 0;
+  font: 1.5em 'Novecento Wide';
+}
+
+/* line 31, ../sass/post.scss */
+.post-title {
+  margin: 2% 0 3%;
+  font: 4.5em 'Calendas Plus';
+}
+
+/* line 35, ../sass/post.scss */
+.post-meta {
+  letter-spacing: 0.1em;
+  font: 1.3em 'PT Sans', 'Droid Sans';
+  font-style: italic;
+}
+
+/* line 40, ../sass/post.scss */
+.instruction {
+  margin-top: 4%;
+}
+
+/* line 44, ../sass/post.scss */
+.post-content img {
+  width: 100%;
+}
+
+/* line 47, ../sass/post.scss */
+.post-footer {
+  border-left: 15px solid #2c2c2c;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 3%;
+  width: auto;
+  background: none;
+}
+
+/* line 58, ../sass/post.scss */
+.author h4 {
+  margin-bottom: 1%;
+  font: 800 1.5em 'Novecento Wide';
+}
+/* line 62, ../sass/post.scss */
+.author p {
+  margin: 0;
+  font: 1em 'PT Sans', 'Droid Sans';
+}
+
+/* line 67, ../sass/post.scss */
+.share {
+  position: relative;
+  bottom: 0;
+}
+/* line 70, ../sass/post.scss */
+.share h4 {
+  margin: 5% 0 0;
+  font: 1em 'Montserrat';
+}
+
+@media screen and (max-width: 480px) {
+  /* line 77, ../sass/post.scss */
+  .blog-intro {
+    font-size: 0.8em;
+  }
+
+  /* line 80, ../sass/post.scss */
+  .post-title {
+    font-size: 2em;
+    margin: 10% 0;
+  }
+
+  /* line 84, ../sass/post.scss */
+  .post-meta {
+    font-size: 0.7em;
+  }
+
+  /* line 87, ../sass/post.scss */
+  .author h4 {
+    margin-bottom: 5%;
+  }
+
+  /* line 90, ../sass/post.scss */
+  .post-footer {
+    text-align: center;
+  }
+
+  /* line 94, ../sass/post.scss */
+  .share h4 {
+    margin-bottom: 2%;
+  }
+  /* line 97, ../sass/post.scss */
+  .share .icon-twitter, .share .icon-facebook, .share .icon-google-plus {
+    font-size: 1.5em;
+  }
+}

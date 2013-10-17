@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<head lang="en">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Transparent Documentation</title>
+  <style type="text/css" media="screen">
+    html {
+      min-height: 100%;
+      height: 100%;
+    }
+    body {
+      font: 300 1.5em/2em Helvetica, Arial, sans-serif;
+      margin: 0;
+      min-height: 100%;
+      height: 100%;
+    }
+    .vertical {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .content {
+      width: 80%;
+      margin-left: 10%;
+    }
+    [class^=quad] {
+      position: relative;
+      display: table;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      color: #fff;
+    }
+    .quad-1 {
+      background: #f2f2f2;
+      color: #0F0F0F;
+    }
+    .quad-2 {
+      background: #b2ca9e;
+      color: #222222;
+    }
+    .quad-3 {
+      background: #86d8e5;
+      color: #484848;
+    }
+    .quad-4 {
+      background: #fbffa5;
+      color: #0F0F0F;
+    }
+    .quad-5 {
+      background: #c0abf9;
+      color: #0F0F0F;
+    }
+    .quad-6 {
+      background: #222222;
+      color: #B7B7B7;
+    }
+    /*==============================================
+      Default Style Fixing
+      ==============================================*/
+    a {
+      color: #353535;
+      text-decoration: none;
+      -webkit-transition: color 0.15s linear;
+      -moz-transition: color 0.15s linear;
+      -o-transition: color 0.15s linear;
+      -ms-transition: color 0.15s linear;
+      transition: color 0.15s linear;
+      font-weight: 300;
+    }
+    a:hover {
+      color: #2776be;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin: 1% 0;
+    }
+    p {
+      margin: 1% 0;
+    }
+    li {
+      font-weight: 300;
+    }
+    pre {
+      color: white;
+      white-space: pre-wrap;       /* css-3 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="content">
+    <h3 class="center alt"><i>Transparent</i> | Documentation by Derek Duncan v1.0</h3>
+  </div>
+  <section class="quad-1">
+    <div class="vertical">
+      <div class="content">
+        <h1 class="center">Transparent</h1>
+        <h4><i>A Ghost Theme</i></h4>
+
+        <div class="borderTop">
+          <div class="span-6 colborder info prepend-1">
+            <p class="prepend-top">
+              <strong>Created</strong>: 16/10/2013<br>
+              <strong>By</strong>: Derek Duncan<br>
+              <strong>Website</strong>: <a href="http://www.derekduncan.me">www.derekduncan.me</a> </br>
+              <strong>Email</strong>: <a href="mailto:work@derekduncan.me">work@derekduncan.me</a>
+            </p>
+          </div><!-- end div .span-6 -->
+
+          <div class="span-12 last">
+            <p class="prepend-top append-0">
+              Transparent is a theme devoted to beauty. Typefaces, whitespace, images and general design are all key features of this theme. If you have any suggestions for improvement, please email me and I will try my best to implement your ideas.
+            </p>
+          </div>
+        </div><!-- end div .borderTop -->
+      </div>
+    </div>
+
+  </section>
+
+  <section class="quad-2">
+    <div class="vertical">
+      <div class="content">
+        <h2 id="toc" class="alt">Table of Contents</h2>
+        <ol class="alpha">
+          <li><a href="#htmlStructure">Posting</a></li>
+          <li><a href="#cssFiles">CSS Files and Structure</a></li>
+          <li><a href="#javascript">JavaScript</a></li>
+          <li><a href="#credits">Sources and Credits</a></li>
+          <li><a href="#">Any additional unique features that need an overview</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="quad-3">
+    <div class="vertical">
+      <div class="content">
+        <h3 id="htmlStructure"><strong>A) Posting</strong> - <a href="#toc">top</a></h3>
+        <p>While creating a post, there are a few things you may implement to customize the post's content.</p>
+
+        <p>If you would like to edit the color or background image of the cover image, start your post with the snippet below.</p>
+
+        <pre>;;youColorHexOrBackgroundImageUrl;;</pre>
+
+        <p>Here is a more concrete example</p>
+
+        <pre>
+          ;;ACBC65;; //Color Hex or this could work: ;;url('../images/image_name.png');;
+
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+        </pre>
+
+        <p>This syntax with ensure you can replace the color/image on each post. This will automatically be removed from the post as well.</p>
+
+        <p>To add a description of the image, write it where the alt should be and it will be placed below the image</p>
+
+        <pre>
+          ![ALT HERE](URL HERE)
+        </pre>
+      </div>
+    </div>
+  </section>
+  <section class="quad-4">
+    <div class="vertical">
+      <div class="content">
+
+        <h3 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+
+        <p>I'm using four CSS files in this theme. "normalize.css" is a generic reset file. Many browser interpret the default behavior of html elements differently. By using a general reset CSS file, we can work round this. This file also contains some general styling, such as anchor tag colors, font-sizes, etc. Keep in mind, that these values might be overridden somewhere else in the file.</p>
+
+        <p>"screen.css" contains all of the specific stylings that should be applied to every page on the website. </p>
+
+        <p>"index.css" contains all the styling for the index view "/".</p>
+
+        <p>"post.css" contains all the styling for the each post. "/".</p>
+
+        <p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p>
+
+        <p>Beware when editing the css that it could destroy the styling of the blog.</p>
+
+      </div>
+    </div>
+  </section>
+  <section class="quad-5">
+    <div class="vertical">
+      <div class="content">
+        <h3 id="javascript"><strong>C) JavaScript</strong> - <a href="#toc">top</a></h3>
+
+        <p>This theme imports three Javascript files.</p>
+
+        <ol>
+          <li>jQuery</li>
+          <li>index.js</li>
+          <li>post.js</li>
+        </ol>
+
+        <ol>
+          <li>jQuery is a Javascript library that greatly reduces the amount of code that you must write.</li>
+          <li>Most of the animation in this site is carried out from the customs scripts. There are a few functions worth looking over.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section class="quad-6">
+    <div class="vertical">
+      <div class="content">
+
+        <h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+
+        <p>I've used the following fonts and images with their license.</p>
+
+        <ul>
+          <li>Index Cover Image </li>
+          <p>Courtesy of http://www.city-data.com/</p>
+          <li>Calendas Plus</li>
+          <p>This font family is freeware and can be used for personal
+and commercial works. You can use this font at a single home or business location on a maximum of 5 CPUs.</p>
+          <li>Paratype PT Sans</li>
+          <p>Permission is hereby granted, free of charge, to any person obtaining a copy of the font software, to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the font software, subject to the following conditions:</p>
+          <li>Novecento Wide</li>
+          <p><a href="http://www.fontspring.com/fonts/synthview/novecento-sans?utm_source=fontsquirrel.com&utm_medium=download_link&utm_campaign=novecento-wide">License</a></p>
+          <li>Montserrat</li>
+          <p><a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License, 1.1</a></p>
+        </ul>
+
+        <hr>
+
+        <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p>
+      </div>
+    </div>
+  </section>
+  <div class="content">
+    <p class="append-bottom alt large"><strong>Derek Duncan</strong></p>
+    <hr>
+  </div>
+
+</body>
+</html>

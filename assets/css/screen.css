@@ -1,0 +1,714 @@
+/*
+==========================================================================
+Table of Contents
+========================================================================== */
+
+/*
+
+  0.  Includes
+  1.  Icons/Fonts
+  2.  General
+  3.  Utilities
+  4.  General
+  5.  Single Post
+  6.  Third Party Elements
+  7.  Pagination
+  8.  Footer
+  9.  Media Queries (Tablet)
+  10. Media Queries (Mobile)
+
+ */
+
+/* ==========================================================================
+  0. Includes - Ground zero
+  ========================================================================== */
+
+@import url(normalize.css);
+
+
+/* ==========================================================================
+   1. Icons - Sets up the icon font and respective classes
+   ========================================================================== */
+
+/* Import the font file with the icons in it */
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'icons';
+  src:url('../fonts/icons.eot');
+  src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/icons.woff') format('woff'),
+      url('../fonts/icons.ttf') format('truetype'),
+      url('../fonts/icons.svg#icons') format('svg');
+}
+@font-face {
+  font-weight: 400;
+  font-family: 'Novecento Wide';
+  src:url('../fonts/novecentowide-normal-webfont.eot');
+  src:url('../fonts/novecentowide-normal-webfont.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/novecentowide-normal-webfont.woff') format('woff'),
+      url('../fonts/novecentowide-normal-webfont.ttf') format('truetype');
+}
+@font-face {
+  font-weight: 800;
+  font-family: 'Novecento Wide';
+  src:url('../fonts/novecentowide-bold-webfont.eot');
+  src:url('../fonts/novecentowide-bold-webfont.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/novecentowide-bold-webfont.woff') format('woff'),
+      url('../fonts/novecentowide-bold-webfont.ttf') format('truetype');
+}
+@font-face {
+  font-weight: 400;
+  font-family: 'Montserrat';
+  src:url('../fonts/montserrat-regular-webfont.eot');
+  src:url('../fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/montserrat-regular-webfont.woff') format('woff'),
+      url('../fonts/montserrat-regular-webfont.ttf') format('truetype');
+}
+  @font-face {
+    font-weight: 800;
+    font-family: 'Montserrat';
+    src:url('../fonts/montserrat-bold-webfont.eot');
+    src:url('../fonts/montserrat-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/montserrat-bold-webfont.woff') format('woff'),
+        url('../fonts/montserrat-bold-webfont.ttf') format('truetype');
+  }
+@font-face {
+  font-weight: 400;
+  font-family: 'Calendas Plus';
+  src:url('../fonts/calendas_plus-webfont.eot');
+  src:url('../fonts/calendas_plus-webfont.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/calendas_plus-webfont.woff') format('woff'),
+      url('../fonts/calendas_plus-webfont.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'PT Sans';
+  src: url('../fonts/PTSans.ttc');
+}
+
+/* Apply these base styles to all icons */
+.icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
+  text-decoration: none;
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icons';
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Each icon is created by inserting the corret character into the
+   content of the :before pseudo element. Like a boss. */
+.icon-ghost:before {
+  content: "\e000";
+}
+.icon-feed:before {
+  content: "\e001";
+}
+.icon-twitter:before {
+  content: "\e002";
+  font-size: 1.1em;
+}
+.icon-google-plus:before {
+  content: "\e003";
+}
+.icon-facebook:before {
+  content: "\e004";
+}
+
+
+/* ==========================================================================
+   2. General - Setting up some base styles
+   ========================================================================== */
+
+html {
+  max-height: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  max-height: 100%;
+  height: 100%;
+  color: #3A4145;
+  font-size: 2.0rem;
+  font-family: 'Droid Serif', serif;
+  line-height: 2em;
+}
+
+::-moz-selection {
+  background: #D6EDFF;
+  color: #222;
+  text-shadow: none;
+}
+
+::selection {
+  background: #D6EDFF;
+  color: #222;
+  text-shadow: none;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  text-indent: -3px;
+  letter-spacing: -2px;
+  font-size: 5rem;
+  line-height: 1.2em;
+}
+
+h2 {
+  text-indent: -2px;
+  letter-spacing: -1px;
+  font-size: 4rem;
+  line-height: 1.2em;
+}
+
+h3 {
+  font-size: 3.5rem;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+h5 {
+  font-size: 2.5rem;
+}
+
+h6 {
+  font-size: 2rem;
+}
+
+a {
+  color: #4a4a4a;
+  transition: color ease 0.3s;
+}
+
+a:hover {
+  color: #57A3E8;
+}
+
+h1 a, h2 a, h3 a,
+h4 a, h5 a, h6 a {
+  color: #50585D;
+}
+
+
+p, ul, ol {
+  margin: 1.6em 0;
+}
+
+ol ol, ul ul,
+ul ol, ol ul {
+  margin: 0.4em 0;
+}
+
+hr {
+  display: block;
+  margin: 3.2em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #efefef;
+}
+
+blockquote {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1.6em 0 1.6em -2.2em;
+  padding: 0 0 0 1.6em;
+  border-left: #4a4a4a 0.4em solid;
+}
+
+blockquote p {
+  margin: 0.8em 0;
+  font-style: italic;
+}
+
+blockquote small {
+  display: inline-block;
+  margin: 0.8em 0 0.8em 1.5em;
+  color: #ccc;
+  font-size:0.9em;;
+}
+
+blockquote small:before { content: '\2014 \00A0'; }
+
+blockquote cite {
+  font-weight:bold;
+}
+
+blockquote cite a { font-weight: normal; }
+
+
+dl {
+  margin: 1.6em 0;
+}
+
+dl dt {
+  float: left;
+  clear: left;
+  overflow: hidden;
+  margin-bottom: 1em;
+  width: 180px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+dl dd {
+  margin-bottom: 1em;
+  margin-left: 200px;
+}
+
+mark {
+  background-color: #ffc336;
+}
+
+code, tt {
+  padding: 1px 3px;
+  border: 1px solid #E3EDF3;
+  border-radius: 2px;
+  background: #F7FAFB;
+  white-space: pre;
+  font-size: 0.85em;
+  font-family: Inconsolata, monospace, sans-serif;
+}
+
+pre {
+  overflow: auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1.6em 0;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #E3EDF3;
+  border-radius: 3px;
+  background: #F7FAFB;
+  white-space: pre;
+  font-size: 0.9em;
+  font-family: Inconsolata, monospace, sans-serif;
+}
+
+pre code, tt {
+  padding: 0;
+  border: none;
+  background: transparent;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+  font-size: inherit;
+}
+
+kbd {
+  display: inline-block;
+  margin-bottom: 0.4em;
+  padding: 1px 8px;
+  border: #ccc 1px solid;
+  border-radius: 4px;
+  background: #f4f4f4;
+  box-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.2),
+      0 1px 0 0 #fff inset;
+  color: #666;
+  text-shadow: #fff 0 1px 0;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+table {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1.6em 0;
+  max-width: 100%;
+  width:100%;
+  background-color: transparent;
+}
+
+table th,
+table td {
+  padding: 8px;
+  border-top: 1px solid #efefef;
+  vertical-align: top;
+  text-align: left;
+  line-height: 20px;
+}
+
+table th { color: #000; }
+
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+table tbody + tbody { border-top: 2px solid #efefef; }
+
+table table table { background-color: #fff; }
+
+table tbody > tr:nth-child(odd) > td,
+table tbody > tr:nth-child(odd) > th {
+  background-color: #f6f6f6;
+}
+
+table.plain {
+  tbody > tr:nth-child(odd) > td,
+  tbody > tr:nth-child(odd) > th {
+      background: transparent;
+  }
+}
+input[type=text] {
+  padding: 10px 5px;
+  outline: none;
+  color: #1f1f1f;
+}
+
+
+/* ==========================================================================
+   3. Utilities - These things get used a lot
+   ========================================================================== */
+
+/* Hides shit */
+.hidden {
+  display: none;
+  visibility: hidden;
+  text-indent: -9999px;
+}
+
+/* Creates a responsive wrapper that makes our content scale nicely */
+.inner {
+  position: relative;
+  margin: 0 auto;
+  max-width: 700px;
+  width: 80%;
+}
+
+/* Centres vertically yo. (IE8+) */
+.vertical {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* Clearfix */
+.clearfix:after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  height: 0;
+  content: ".";
+  line-height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   4. Pagination - Tools to let you flick between pages
+   ========================================================================== */
+
+/* The main wrapper for our pagination links */
+.pagination {
+  position: relative;
+  margin: 4rem auto;
+  max-width: 700px;
+  width: 80%;
+  color: #9EABB3;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.pagination a {
+  color: #9EABB3;
+}
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+  position: absolute;
+  display: inline-block;
+  padding: 0 15px;
+  border: #EBF2F6 2px solid;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: border ease 0.3s;
+}
+
+.older-posts {
+  right: 0;
+}
+
+.page-number {
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.newer-posts {
+  left: 0;
+}
+
+.older-posts:hover,
+.newer-posts:hover {
+  border-color: #9EABB3;
+}
+/* ==========================================================================
+   5. General - The main styles for the the theme
+   ========================================================================== */
+/*Header photo and container for Blog/Post info*/
+#site-head {
+  position: relative;
+  display: table;
+  margin-bottom: 5rem;
+  width: 100%;
+  height: 100%;
+  background: #303538 no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+/*Darkened overlay for header*/
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  content: '';
+  opacity: 0.5;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+
+#back {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  padding: 6px;
+  color: rgba(0,0,0,0.2);
+  font-size: 16px;
+}
+/*The Container for the post content.*/
+.content {
+  /* margin formula: (100 - width) / 2 */
+  margin-left: 15%;
+  /* Adjust to preference. Be sure to change margin-left as well */
+  width: 70%;
+  font-size: 1.2em;
+  line-height: 2.1em;
+}
+.site-footer .inner {
+  /* Formatting for global footer */
+  max-width: none;
+  width: 70%;
+  text-align: center;
+}
+/* this icon provides a quick way to top of view */
+.up-top {
+  position: absolute;
+  top: 43%;
+  right: 4%;
+  display: table-cell;
+  width: 40px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+/* Footer Styles */
+.site-footer {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 6rem;
+  padding: 3% 0;
+  width: 100%;
+  background: #ededed;
+  box-shadow: 0 2px 5px rgba(0,0,0, 0.1) inset;
+  font: 0.8em 'PT Sans';
+  -ms-box-sizing: border-box;
+}
+/* This Instruction is "Read More" on each post's header*/
+.instruction {
+  margin: 0 auto;
+  padding: 2% 3%;
+  width: 30%;
+  border: 3px solid #fff;
+  font: 400 1.6em 'Montserrat';
+  cursor: pointer;
+}
+/* The menu icon */
+.menu-trigger {
+  position: absolute;
+  top: 5%;
+  left: 2.5%;
+  z-index: 300;
+  line-height: normal;
+  cursor: pointer;
+}
+.menu-trigger img {
+  width: 40px;
+}
+/* Defaults hidden. The menu is activated by the icon being interacted with
+   as defined in index.js */
+.menu {
+  position: absolute;
+  z-index: 100;
+  display: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*padding-top: 10%;*/
+  padding-left: 2.5%;
+  width: 20%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -ms-box-sizing: border-box;
+}
+/* Center menu navigation vertically */
+.menu .vertical {
+  position: relative;
+  opacity: 0.8;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.menu li {
+  margin: 10% 0;
+  list-style-type: none;
+
+}
+.menu li a {
+  border-bottom: 3px solid transparent;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  font: 1.5em 'Montserrat';
+  -webkit-font-smoothing: antialiased;
+}
+.menu li:first-child {
+  margin-top: 0;
+}
+.menu hr {
+  width: 30%;
+  margin: 2% 0;
+}
+.menu li .subscribe {
+  font-family: 'Novecento Wide';
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   6. Media Queries - Adjust for various screen sizes
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+    #site-head {
+      margin-bottom: 2rem;
+    }
+    .content {
+      margin-left: 5%;
+      width: 90%;
+      font-size: 0.9em;
+    }
+    .menu {
+      padding-left: 15%;
+    }
+    .menu-trigger {
+      top: 6%;
+      left: 6%;
+    }
+    .post-content {
+      font-size: 0.8em;
+    }
+    .instruction {
+      padding: 5% 3%;
+      width: 40%;
+      font-size: 0.7em;
+    }
+    .blog-title, .post-title {
+      font-size: 0.8em;
+    }
+    .blog-title {
+      margin: 4% 0 10%;
+    }
+    .blog-intro {
+      font-size: 0.8em;
+    }
+    .menu {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .menu .vertical {
+      padding-top: 15%;
+    }
+    .menu li {
+      margin: 5% 0;
+    }
+    .menu li a {
+        font-size: 0.8em;
+    }
+    .menu li .subscribe {
+      font-size: 0.8em;
+    }
+    .site-footer {
+      padding: 15% 0;
+    }
+
+}
+@media screen and (min-width: 480px) {
+    .up-top img:hover {
+      position: relative;
+      top: -5px;
+      -webkit-transition: top 0.1s linear;
+      -moz-transition: top 0.1s linear;
+      -ms-transition: top 0.1s linear;
+      -o-transition: top 0.1s linear;
+      transition: top 0.1s linear;
+    }
+    .menu li a {
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      -ms-transition: all 0.1s linear;
+      -o-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+    }
+    .menu li a:hover {
+       border-bottom-color: #fff;
+    }
+    .instruction {
+      position: relative;
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      -ms-transition: all 0.1s linear;
+      -o-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+    }
+    .instruction:hover {
+      top: 5px;
+    }
+}
+
+/* ==========================================================================
+   Over-rides
+   ==========================================================================
